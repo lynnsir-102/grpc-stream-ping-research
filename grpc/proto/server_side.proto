@@ -1,0 +1,15 @@
+syntax = "proto3";
+package proto;
+option go_package = "./pb;pb";
+
+service ServerSideDelivery {
+  rpc Watch(ServerSideDeliveryRequest) returns (stream ServerSideDeliveryResponse) {}
+}
+
+message ServerSideDeliveryRequest {
+    string key = 1;
+}
+
+message ServerSideDeliveryResponse {
+    string key = 1;
+}
